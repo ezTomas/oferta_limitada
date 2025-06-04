@@ -1,12 +1,9 @@
-extends Area2D
+extends CharacterBody2D
 class_name player
 
 @export var Speed: float = 300
 var screen_size 
 
-func _ready() -> void:
-	screen_size = get_viewport_rect().size
-	
 
 func _process(delta: float) -> void:
 	var velocity = Vector2.ZERO # The player's movement vector.
@@ -20,7 +17,8 @@ func _process(delta: float) -> void:
 		velocity.y -= 1
 
 	position += velocity * delta * Speed
-	position = position.clamp(Vector2.ZERO, screen_size)
+	
+	move_and_slide()
 	
 func start(pos):
 	position = pos

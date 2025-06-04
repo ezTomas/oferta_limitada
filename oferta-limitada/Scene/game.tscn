@@ -1,92 +1,163 @@
-[gd_scene load_steps=17 format=3 uid="uid://y3wspxw8hkle"]
+[gd_scene load_steps=18 format=3 uid="uid://y3wspxw8hkle"]
 
-[ext_resource type="PackedScene" uid="uid://cxe2b6iui5nf7" path="res://Scene/player.tscn" id="1_mhtsl"]
+[ext_resource type="PackedScene" uid="uid://cepso5mo11glp" path="res://Scene/player.tscn" id="1_mhtsl"]
 [ext_resource type="Texture2D" uid="uid://tq5o2n2rs8t6" path="res://Sprite/Piso.jpg" id="1_w51g1"]
-[ext_resource type="Texture2D" uid="uid://cy3gp6o8bn7uv" path="res://Sprite/GondolaMedio.png" id="2_ihreq"]
 [ext_resource type="Texture2D" uid="uid://xokqw8eypdjg" path="res://Sprite/Pared.png" id="3_cvvdq"]
-[ext_resource type="Texture2D" uid="uid://crh0qayoggxw8" path="res://Sprite/Gondola4.png" id="4_m52p7"]
-[ext_resource type="Texture2D" uid="uid://ggbmbontaw2g" path="res://Sprite/GondolaLateralDerecha.png" id="4_thj8p"]
-[ext_resource type="Texture2D" uid="uid://o26ujgvf1b54" path="res://Sprite/GondolaLateralIzquierda.png" id="5_h8jt7"]
-[ext_resource type="Texture2D" uid="uid://ce5ubpqxbl34k" path="res://Sprite/Gondola3.png" id="6_vy0et"]
-[ext_resource type="Texture2D" uid="uid://ccx2qxlctix02" path="res://Sprite/Gondola5.png" id="7_sqb0o"]
-[ext_resource type="Texture2D" uid="uid://qfwyo5ujhr21" path="res://Sprite/Gondola7.png" id="10_gji41"]
 [ext_resource type="Texture2D" uid="uid://f68ug1x2hojn" path="res://Sprite/EspacioLimite.png" id="11_5smqc"]
-[ext_resource type="Texture2D" uid="uid://od28hwn3y07r" path="res://Sprite/Gondola2.png" id="12_mo8cs"]
-[ext_resource type="Texture2D" uid="uid://c4hyphjacokev" path="res://Sprite/Gondola6.png" id="13_nnpbk"]
+[ext_resource type="PackedScene" uid="uid://gpxjs5acdttc" path="res://Scene/gondola_medio.tscn" id="13_cvvdq"]
+[ext_resource type="PackedScene" uid="uid://gsnn2u4ykvi1" path="res://Scene/gondola_2.tscn" id="13_ha7wd"]
+[ext_resource type="PackedScene" uid="uid://nlqx7iicu7w4" path="res://Scene/gondola_3.tscn" id="13_yjs1f"]
+[ext_resource type="PackedScene" uid="uid://cxsex84kodkrr" path="res://Scene/gondola_lateral_izq.tscn" id="14_vyw1f"]
 [ext_resource type="Texture2D" uid="uid://cblkuo5ye875l" path="res://Sprite/Gondola de Carne.png" id="14_xl7p6"]
+[ext_resource type="PackedScene" uid="uid://co4anlmnn7riq" path="res://Scene/gondola_1.tscn" id="14_yjs1f"]
+[ext_resource type="PackedScene" uid="uid://b4qtf3kv5noyh" path="res://Scene/gondola_laterar_der.tscn" id="15_cvvdq"]
 [ext_resource type="Texture2D" uid="uid://5gqt34v3e2js" path="res://Sprite/CajaRegistradora.png" id="15_yxhj1"]
 [ext_resource type="Texture2D" uid="uid://i1eednsyq6h2" path="res://Sprite/CajasBebidas.png" id="16_xsmcn"]
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_sqb0o"]
+a = Vector2(891.888, 145.632)
+b = Vector2(-814.779, 145.632)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvvdq"]
+size = Vector2(156.787, 1071.43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vy0et"]
+size = Vector2(1677.54, 96.0679)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m52p7"]
+size = Vector2(85.676, 1065.93)
+
 [node name="Game" type="Node2D"]
+
+[node name="Pared" type="Sprite2D" parent="."]
+position = Vector2(759.75, -136.25)
+scale = Vector2(0.975495, 1.26959)
+texture = ExtResource("3_cvvdq")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(589.5, 334)
-scale = Vector2(0.604687, 0.612963)
+position = Vector2(1005.5, 653)
+scale = Vector2(1.03802, 1.2037)
 texture = ExtResource("1_w51g1")
 
-[node name="Player" parent="." instance=ExtResource("1_mhtsl")]
-position = Vector2(581, 334)
+[node name="Gondola" type="Node2D" parent="."]
 
-[node name="Pared" type="Sprite2D" parent="."]
-position = Vector2(722, -107)
-texture = ExtResource("3_cvvdq")
-
-[node name="Gondola4" type="Sprite2D" parent="."]
-position = Vector2(622, -19)
-texture = ExtResource("4_m52p7")
-
-[node name="GondolaMedio" type="Sprite2D" parent="."]
-position = Vector2(753, 325)
-texture = ExtResource("2_ihreq")
-
-[node name="GondolaMedio2" type="Sprite2D" parent="."]
-position = Vector2(937, 325)
-texture = ExtResource("2_ihreq")
-
-[node name="Gondola3" type="Sprite2D" parent="."]
-position = Vector2(455, 4)
-texture = ExtResource("6_vy0et")
-
-[node name="Gondola5" type="Sprite2D" parent="."]
-position = Vector2(808, -23)
-texture = ExtResource("7_sqb0o")
-
-[node name="GondolaLateralDerecha" type="Sprite2D" parent="."]
-position = Vector2(1135, 328)
-texture = ExtResource("4_thj8p")
-
-[node name="GondolaLateralIzquierda" type="Sprite2D" parent="."]
-position = Vector2(588, 326)
-texture = ExtResource("5_h8jt7")
-
-[node name="Gondola7" type="Sprite2D" parent="."]
-position = Vector2(184, -9)
-texture = ExtResource("10_gji41")
-
-[node name="EspacioLimite" type="Sprite2D" parent="."]
-position = Vector2(625, 224)
-scale = Vector2(0.707292, 0.957407)
-texture = ExtResource("11_5smqc")
-
-[node name="Gondola2" type="Sprite2D" parent="."]
-position = Vector2(334, 23)
-texture = ExtResource("12_mo8cs")
-
-[node name="Gondola6" type="Sprite2D" parent="."]
-position = Vector2(982, -23)
-texture = ExtResource("13_nnpbk")
-
-[node name="GondolaDeCarne" type="Sprite2D" parent="."]
-position = Vector2(61, 238)
-texture = ExtResource("14_xl7p6")
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_mhtsl")]
+position = Vector2(816, 176)
+scale = Vector2(0.447188, 0.562705)
+motion_mode = 1
 
 [node name="CajaRegistradora" type="Sprite2D" parent="."]
-position = Vector2(71, 547)
+position = Vector2(152.569, 1218.46)
 rotation = -0.0026771
+scale = Vector2(1.32518, 1.29765)
 texture = ExtResource("15_yxhj1")
 
 [node name="CajasBebidas" type="Sprite2D" parent="."]
-position = Vector2(1100, 584)
+position = Vector2(1904, 1181)
+scale = Vector2(1.23, 1.66304)
 texture = ExtResource("16_xsmcn")
+
+[node name="GondolaDeCarne2" type="Sprite2D" parent="."]
+position = Vector2(95, 340)
+scale = Vector2(1.4918, 1.14879)
+texture = ExtResource("14_xl7p6")
+
+[node name="GondolaDeCarne" type="Sprite2D" parent="."]
+position = Vector2(88, 774)
+scale = Vector2(1.4918, 1.14879)
+texture = ExtResource("14_xl7p6")
+
+[node name="GondolasMedio" type="Node2D" parent="."]
+position = Vector2(1373, 528)
+scale = Vector2(1.5119, 1.10751)
+
+[node name="GondolaMedio3" parent="GondolasMedio" instance=ExtResource("13_cvvdq")]
+position = Vector2(187.181, -130.022)
+
+[node name="GondolaMedio2" parent="GondolasMedio" instance=ExtResource("13_cvvdq")]
+position = Vector2(187.181, 61.3991)
+
+[node name="GondolaMedio" parent="GondolasMedio" instance=ExtResource("13_cvvdq")]
+position = Vector2(185.859, 253.723)
+
+[node name="GondolaMedio6" parent="GondolasMedio" instance=ExtResource("13_cvvdq")]
+position = Vector2(-25.7952, -130.022)
+
+[node name="GondolaMedio5" parent="GondolasMedio" instance=ExtResource("13_cvvdq")]
+position = Vector2(-27.7795, 63.205)
+
+[node name="GondolaMedio4" parent="GondolasMedio" instance=ExtResource("13_cvvdq")]
+position = Vector2(-29.1023, 251.917)
+
+[node name="GondolaMedio9" parent="GondolasMedio" instance=ExtResource("13_cvvdq")]
+position = Vector2(-236.126, -138.148)
+
+[node name="GondolaMedio8" parent="GondolasMedio" instance=ExtResource("13_cvvdq")]
+position = Vector2(-237.449, 54.1756)
+
+[node name="GondolaMedio7" parent="GondolasMedio" instance=ExtResource("13_cvvdq")]
+position = Vector2(-238.11, 250.111)
+
+[node name="GondolasLaterales" type="Node2D" parent="."]
+position = Vector2(695, 495)
+scale = Vector2(1.34211, 1.1212)
+
+[node name="GondolaLateralIzq3" parent="GondolasLaterales" instance=ExtResource("14_vyw1f")]
+position = Vector2(18.6274, -117.731)
+
+[node name="GondolaLateralIzq2" parent="GondolasLaterales" instance=ExtResource("14_vyw1f")]
+position = Vector2(20.1177, 75.8116)
+
+[node name="GondolaLateralIzq" parent="GondolasLaterales" instance=ExtResource("14_vyw1f")]
+position = Vector2(22.353, 268.462)
+
+[node name="GondolaLaterarDer3" parent="GondolasLaterales" instance=ExtResource("15_cvvdq")]
+position = Vector2(941.804, -113.271)
+
+[node name="GondolaLaterarDer2" parent="GondolasLaterales" instance=ExtResource("15_cvvdq")]
+position = Vector2(939.569, 77.5954)
+
+[node name="GondolaLaterarDer" parent="GondolasLaterales" instance=ExtResource("15_cvvdq")]
+position = Vector2(938.078, 272.03)
+
+[node name="Limite" type="StaticBody2D" parent="."]
+position = Vector2(990, -254)
+scale = Vector2(1.16719, 1.63426)
+
+[node name="EspacioLimite" type="Sprite2D" parent="Limite"]
+position = Vector2(62.3292, 490.589)
+scale = Vector2(1.00067, 1.03428)
+texture = ExtResource("11_5smqc")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Limite"]
+shape = SubResource("SegmentShape2D_sqb0o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limite"]
+position = Vector2(939.866, 512.159)
+shape = SubResource("RectangleShape2D_cvvdq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Limite"]
+position = Vector2(26.5596, 1001.37)
+shape = SubResource("RectangleShape2D_vy0et")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Limite"]
+position = Vector2(-852.477, 511.547)
+shape = SubResource("RectangleShape2D_m52p7")
+
+[node name="Gondola1" parent="." instance=ExtResource("14_yjs1f")]
+position = Vector2(795, -20)
+scale = Vector2(1.36, 1.72)
+
+[node name="Gondola2" parent="." instance=ExtResource("13_ha7wd")]
+position = Vector2(1739, -65)
+scale = Vector2(1.2, 1.4)
+
+[node name="Gondola3" parent="." instance=ExtResource("13_yjs1f")]
+position = Vector2(1281, -57)
+scale = Vector2(1.76, 1.24)
+
+[node name="Gondola3_1" parent="." instance=ExtResource("13_yjs1f")]
+position = Vector2(208, -67)
+scale = Vector2(1.56, 1.32)
