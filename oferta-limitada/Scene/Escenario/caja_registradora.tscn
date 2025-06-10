@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvh5dr0smk3jy"]
+
+[ext_resource type="Texture2D" uid="uid://5gqt34v3e2js" path="res://Sprite/CajaRegistradora.png" id="1_iyguc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4eua"]
+size = Vector2(76, 166)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rq8w"]
+size = Vector2(135, 60)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(113, 124)
+shape = SubResource("RectangleShape2D_j4eua")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(81.5, 72)
+shape = SubResource("RectangleShape2D_2rq8w")
+
+[node name="CajaRegistradora" type="Sprite2D" parent="."]
+position = Vector2(78, 106)
+texture = ExtResource("1_iyguc")
