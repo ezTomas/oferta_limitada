@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7q84gxce37wv"]
+
+[ext_resource type="Texture2D" uid="uid://cblkuo5ye875l" path="res://Sprite/Gondola de Carne.png" id="1_5npuj"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rssgq"]
+a = Vector2(8, -156)
+b = Vector2(16, 171)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8fkwa"]
+a = Vector2(20, 9)
+b = Vector2(-7, 64)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tcc65"]
+a = Vector2(27, 44)
+b = Vector2(-41, 53)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_oph3v"]
+a = Vector2(1, -36)
+b = Vector2(21, -7)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_nknjr"]
+a = Vector2(-40, 5)
+b = Vector2(27, 7)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="GondolaDeCarne" type="Sprite2D" parent="."]
+position = Vector2(62, 186)
+scale = Vector2(1.2, 1.28)
+texture = ExtResource("1_5npuj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(112, 183)
+shape = SubResource("SegmentShape2D_rssgq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(107, 344)
+shape = SubResource("SegmentShape2D_8fkwa")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(71, 363)
+shape = SubResource("SegmentShape2D_tcc65")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(99, 33)
+shape = SubResource("SegmentShape2D_oph3v")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(72, -11)
+shape = SubResource("SegmentShape2D_nknjr")

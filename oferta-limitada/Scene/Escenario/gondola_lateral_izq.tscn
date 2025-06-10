@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxsex84kodkrr"]
+
+[ext_resource type="Texture2D" uid="uid://o26ujgvf1b54" path="res://Sprite/GondolaLateralIzquierda.png" id="1_srb3v"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rbmcq"]
+a = Vector2(-0.666212, -85.6772)
+b = Vector2(3, 164)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bd5nq"]
+a = Vector2(-2, -89)
+b = Vector2(0, 160)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_a0uxq"]
+a = Vector2(-31.1145, 0.888535)
+b = Vector2(33.5222, 1.49475)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1x3xs"]
+a = Vector2(-27.4594, -0.419601)
+b = Vector2(35.385, -0.419601)
+
+[node name="GondolaLateralIzq" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_srb3v")
+
+[node name="Izq" type="CollisionShape2D" parent="."]
+position = Vector2(-29, -3)
+shape = SubResource("SegmentShape2D_rbmcq")
+
+[node name="Der" type="CollisionShape2D" parent="."]
+position = Vector2(34, 1)
+shape = SubResource("SegmentShape2D_bd5nq")
+
+[node name="Arriba" type="CollisionShape2D" parent="."]
+position = Vector2(0, -88)
+shape = SubResource("SegmentShape2D_a0uxq")
+
+[node name="Abajo" type="CollisionShape2D" parent="."]
+position = Vector2(-0.0405045, 159.825)
+shape = SubResource("SegmentShape2D_1x3xs")
