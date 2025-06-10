@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://od28hwn3y07r"
-path="res://.godot/imported/Gondola2.png-2f09b3d2e419256a121d78014ba4ae25.ctex"
+uid="uid://b6vdil3q1yglj"
+path="res://.godot/imported/Atras-Sheet 16x26.png-70b236eb29d5c6240967fc8ef8b299c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/Gondola2.png"
-dest_files=["res://.godot/imported/Gondola2.png-2f09b3d2e419256a121d78014ba4ae25.ctex"]
+source_file="res://Sprite/Personaje/Atras-Sheet 16x26.png"
+dest_files=["res://.godot/imported/Atras-Sheet 16x26.png-70b236eb29d5c6240967fc8ef8b299c3.ctex"]
 
 [params]
 

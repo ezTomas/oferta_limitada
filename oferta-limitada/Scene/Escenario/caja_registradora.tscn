@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvh5dr0smk3jy"]
 
-[ext_resource type="Texture2D" uid="uid://5gqt34v3e2js" path="res://Sprite/CajaRegistradora.png" id="1_iyguc"]
+[ext_resource type="Texture2D" uid="uid://5gqt34v3e2js" path="res://Sprite/Escenario/CajaRegistradora.png" id="1_iyguc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4eua"]
 size = Vector2(76, 166)

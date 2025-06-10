@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o26ujgvf1b54"
-path="res://.godot/imported/GondolaLateralIzquierda.png-6c5ae08230388aa68e3d5aa1f2cec48d.ctex"
+uid="uid://i1eednsyq6h2"
+path="res://.godot/imported/CajasBebidas.png-48c7f04b0576b6d2277fd6a06b8c6899.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/GondolaLateralIzquierda.png"
-dest_files=["res://.godot/imported/GondolaLateralIzquierda.png-6c5ae08230388aa68e3d5aa1f2cec48d.ctex"]
+source_file="res://Sprite/Escenario/CajasBebidas.png"
+dest_files=["res://.godot/imported/CajasBebidas.png-48c7f04b0576b6d2277fd6a06b8c6899.ctex"]
 
 [params]
 

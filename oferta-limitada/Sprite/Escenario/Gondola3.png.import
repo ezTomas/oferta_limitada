@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1xgufrcemd7i"
-path="res://.godot/imported/CajaCompras.png-1efc8ba9a61f1f0eb98cf903eefcb479.ctex"
+uid="uid://ce5ubpqxbl34k"
+path="res://.godot/imported/Gondola3.png-d463475e4c8111fea3bdbc9e9c3c9df4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/CajaCompras.png"
-dest_files=["res://.godot/imported/CajaCompras.png-1efc8ba9a61f1f0eb98cf903eefcb479.ctex"]
+source_file="res://Sprite/Escenario/Gondola3.png"
+dest_files=["res://.godot/imported/Gondola3.png-d463475e4c8111fea3bdbc9e9c3c9df4.ctex"]
 
 [params]
 

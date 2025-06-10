@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bcpdchymkm1es"]
 
-[ext_resource type="Texture2D" uid="uid://i1eednsyq6h2" path="res://Sprite/CajasBebidas.png" id="1_x8h4e"]
+[ext_resource type="Texture2D" uid="uid://i1eednsyq6h2" path="res://Sprite/Escenario/CajasBebidas.png" id="1_x8h4e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y55dx"]
 size = Vector2(138, 78)

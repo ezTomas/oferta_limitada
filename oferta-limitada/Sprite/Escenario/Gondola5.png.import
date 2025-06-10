@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xokqw8eypdjg"
-path="res://.godot/imported/Pared.png-0e2dbd70e8beaf7f7b22c1e906fc783a.ctex"
+uid="uid://ccx2qxlctix02"
+path="res://.godot/imported/Gondola5.png-1d015338eac7f9198fb3e0a7bb28ad6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/Pared.png"
-dest_files=["res://.godot/imported/Pared.png-0e2dbd70e8beaf7f7b22c1e906fc783a.ctex"]
+source_file="res://Sprite/Escenario/Gondola5.png"
+dest_files=["res://.godot/imported/Gondola5.png-1d015338eac7f9198fb3e0a7bb28ad6c.ctex"]
 
 [params]
 
