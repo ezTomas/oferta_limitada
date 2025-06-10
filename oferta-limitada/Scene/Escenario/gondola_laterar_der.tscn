@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b4qtf3kv5noyh"]
 
-[ext_resource type="Texture2D" uid="uid://ggbmbontaw2g" path="res://Sprite/GondolaLateralDerecha.png" id="1_sre8t"]
+[ext_resource type="Texture2D" uid="uid://ggbmbontaw2g" path="res://Sprite/Escenario/GondolaLateralDerecha.png" id="1_sre8t"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_2wu7o"]
 a = Vector2(3, -88)

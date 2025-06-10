@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b7q84gxce37wv"]
 
-[ext_resource type="Texture2D" uid="uid://cblkuo5ye875l" path="res://Sprite/Gondola de Carne.png" id="1_5npuj"]
+[ext_resource type="Texture2D" uid="uid://cblkuo5ye875l" path="res://Sprite/Escenario/Gondola de Carne.png" id="1_5npuj"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_rssgq"]
 a = Vector2(8, -156)

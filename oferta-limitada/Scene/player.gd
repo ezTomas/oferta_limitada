@@ -1,25 +1,40 @@
 extends CharacterBody2D
 class_name player
 
-@export var Speed: float = 300
-var screen_size 
+var is_facing_right: bool = true
+@export var speed: float = 300
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-
-func _process(delta: float) -> void:
-	var velocity = Vector2.ZERO # The player's movement vector.
-	if Input.is_action_pressed("Rigth"):
-		velocity.x += 1
-	if Input.is_action_pressed("Left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("Down"):
-		velocity.y += 1
-	if Input.is_action_pressed("Up"):
-		velocity.y -= 1
-
-	position += velocity * delta * Speed
-	
+func _physics_process(delta: float) -> void:
+	move_x()
+	move_y()
+	flip_h()
+	animacion()
 	move_and_slide()
 	
+func move_x():
+	var input_axis_x = Input.get_axis("Left", "Rigth") 
+	velocity.x = input_axis_x * speed 
+
+func move_y():
+	var input_axis_y = Input.get_axis("Up","Down")
+	velocity.y = input_axis_y * speed
+
+func flip_h():
+	if (is_facing_right and velocity.x < 0) or (not is_facing_right and velocity.x > 0):
+			scale.x *= -1
+			is_facing_right = not is_facing_right
+
+func animacion():
+	if velocity.x:
+		animated_sprite.play("caminar_costado")
+	
+	if velocity.y > 0:
+		animated_sprite.play("caminar_abajo")
+	
+	if velocity.y < 0:
+		animated_sprite.play("caminar_arriba")
+
 func start(pos):
 	position = pos
 	show()

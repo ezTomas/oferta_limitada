@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f68ug1x2hojn"
-path="res://.godot/imported/EspacioLimite.png-b790c0945d84404c467018fae293c859.ctex"
+uid="uid://ggbmbontaw2g"
+path="res://.godot/imported/GondolaLateralDerecha.png-c24d6bec34cb890cc18f8dc9aa3775a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/EspacioLimite.png"
-dest_files=["res://.godot/imported/EspacioLimite.png-b790c0945d84404c467018fae293c859.ctex"]
+source_file="res://Sprite/Escenario/GondolaLateralDerecha.png"
+dest_files=["res://.godot/imported/GondolaLateralDerecha.png-c24d6bec34cb890cc18f8dc9aa3775a3.ctex"]
 
 [params]
 

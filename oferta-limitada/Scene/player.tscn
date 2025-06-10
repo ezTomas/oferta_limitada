@@ -1,20 +1,126 @@
-[gd_scene load_steps=4 format=3 uid="uid://cepso5mo11glp"]
+[gd_scene load_steps=19 format=3 uid="uid://cepso5mo11glp"]
 
 [ext_resource type="Script" uid="uid://clskgobbnt6p3" path="res://Scene/player.gd" id="1_y8w33"]
-[ext_resource type="Texture2D" uid="uid://bwvo7dl5msxie" path="res://icon.svg" id="2_xa75v"]
+[ext_resource type="Texture2D" uid="uid://dniec34lyff1k" path="res://Sprite/Personaje/Adelante-Sheet 16x26.png" id="2_58ae2"]
+[ext_resource type="Texture2D" uid="uid://b6vdil3q1yglj" path="res://Sprite/Personaje/Atras-Sheet 16x26.png" id="3_ivevv"]
+[ext_resource type="Texture2D" uid="uid://cyu8uvsdxb1cr" path="res://Sprite/Personaje/Costado-Sheet 16x26.png" id="4_r6jsd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6qlh"]
+atlas = ExtResource("2_58ae2")
+region = Rect2(0, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sw5t"]
+atlas = ExtResource("2_58ae2")
+region = Rect2(160, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ij4jb"]
+atlas = ExtResource("2_58ae2")
+region = Rect2(320, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c68nv"]
+atlas = ExtResource("2_58ae2")
+region = Rect2(480, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c31lq"]
+atlas = ExtResource("3_ivevv")
+region = Rect2(0, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dof7"]
+atlas = ExtResource("3_ivevv")
+region = Rect2(160, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ao7i"]
+atlas = ExtResource("3_ivevv")
+region = Rect2(320, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sypm"]
+atlas = ExtResource("3_ivevv")
+region = Rect2(480, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fn0wv"]
+atlas = ExtResource("4_r6jsd")
+region = Rect2(0, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqmt2"]
+atlas = ExtResource("4_r6jsd")
+region = Rect2(160, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c40dt"]
+atlas = ExtResource("4_r6jsd")
+region = Rect2(320, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgjog"]
+atlas = ExtResource("4_r6jsd")
+region = Rect2(480, 0, 160, 260)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lhccw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6qlh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sw5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ij4jb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c68nv")
+}],
+"loop": true,
+"name": &"caminar_abajo",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c31lq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dof7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ao7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1sypm")
+}],
+"loop": true,
+"name": &"caminar_arriba",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fn0wv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqmt2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c40dt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgjog")
+}],
+"loop": true,
+"name": &"caminar_costado",
+"speed": 8.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y8w33"]
-size = Vector2(129, 126)
+size = Vector2(129, 181)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(-1, 0)
 script = ExtResource("1_y8w33")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_xa75v")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lhccw")
+animation = &"caminar_costado"
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, 1)
+position = Vector2(2.5, 28.5)
 shape = SubResource("RectangleShape2D_y8w33")
 
 [node name="Camera2D" type="Camera2D" parent="."]

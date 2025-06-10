@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce5ubpqxbl34k"
-path="res://.godot/imported/Gondola3.png-4e4f4d51d56b9197bca44d3d0bb155a8.ctex"
+uid="uid://cblkuo5ye875l"
+path="res://.godot/imported/Gondola de Carne.png-143af3de841df825f54e4d5e0c7608f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/Gondola3.png"
-dest_files=["res://.godot/imported/Gondola3.png-4e4f4d51d56b9197bca44d3d0bb155a8.ctex"]
+source_file="res://Sprite/Escenario/Gondola de Carne.png"
+dest_files=["res://.godot/imported/Gondola de Carne.png-143af3de841df825f54e4d5e0c7608f1.ctex"]
 
 [params]
 

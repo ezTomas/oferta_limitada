@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5gqt34v3e2js"
-path="res://.godot/imported/CajaRegistradora.png-67e45c34c5bd2600a44ec2d97409ae5c.ctex"
+uid="uid://o26ujgvf1b54"
+path="res://.godot/imported/GondolaLateralIzquierda.png-b764fcb3643aff2aa59df17be9732ead.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/CajaRegistradora.png"
-dest_files=["res://.godot/imported/CajaRegistradora.png-67e45c34c5bd2600a44ec2d97409ae5c.ctex"]
+source_file="res://Sprite/Escenario/GondolaLateralIzquierda.png"
+dest_files=["res://.godot/imported/GondolaLateralIzquierda.png-b764fcb3643aff2aa59df17be9732ead.ctex"]
 
 [params]
 

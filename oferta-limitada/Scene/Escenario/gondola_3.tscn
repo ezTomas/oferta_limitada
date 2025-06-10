@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://nlqx7iicu7w4"]
 
-[ext_resource type="Texture2D" uid="uid://ccx2qxlctix02" path="res://Sprite/Gondola5.png" id="1_hnyyu"]
+[ext_resource type="Texture2D" uid="uid://ccx2qxlctix02" path="res://Sprite/Escenario/Gondola5.png" id="1_hnyyu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykcaw"]
 size = Vector2(161, 31)
@@ -12,5 +12,5 @@ position = Vector2(0, 1)
 texture = ExtResource("1_hnyyu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, 67.5)
+position = Vector2(2, 26)
 shape = SubResource("RectangleShape2D_ykcaw")
