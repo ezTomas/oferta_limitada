@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://brww7vky2ebqo"]
+
+[ext_resource type="Script" uid="uid://d8m40kyvhqd4" path="res://Scene/npc.gd" id="1_0j0y8"]
+[ext_resource type="Texture2D" uid="uid://cfs7wyjcvj01s" path="res://Sprite/NPC/NPC-frontal-Sheet.png" id="1_1c12l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j0y8"]
+atlas = ExtResource("1_1c12l")
+region = Rect2(0, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vute2"]
+atlas = ExtResource("1_1c12l")
+region = Rect2(160, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvasf"]
+atlas = ExtResource("1_1c12l")
+region = Rect2(320, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lr0we"]
+atlas = ExtResource("1_1c12l")
+region = Rect2(480, 0, 160, 260)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xa30n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j0y8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vute2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvasf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lr0we")
+}],
+"loop": true,
+"name": &"Caminar",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1c12l"]
+size = Vector2(108, 118)
+
+[node name="NPC" type="CharacterBody2D"]
+script = ExtResource("1_0j0y8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.44, 0.44)
+sprite_frames = SubResource("SpriteFrames_xa30n")
+animation = &"Caminar"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1c12l")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(400, -1)
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+scale = Vector2(1.005, 1.005)
+target_position = Vector2(-400, 1)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
