@@ -15,8 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://f68ug1x2hojn" path="res://Sprite/Escenario/EspacioLimite.png" id="13_vaj68"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_sqb0o"]
-a = Vector2(891.888, 145.632)
-b = Vector2(-814.779, 145.632)
+a = Vector2(885.032, 115.037)
+b = Vector2(-817.348, 118.708)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvvdq"]
 size = Vector2(156.787, 1071.43)
@@ -29,24 +29,36 @@ size = Vector2(85.676, 1065.93)
 
 [node name="Game" type="Node2D"]
 
+[node name="Piso" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Piso"]
+position = Vector2(1005.5, 653)
+scale = Vector2(1.03802, 1.2037)
+texture = ExtResource("2_215e1")
+
+[node name="Pared" type="Sprite2D" parent="."]
+position = Vector2(759.75, -136.25)
+scale = Vector2(0.975495, 1.26959)
+texture = ExtResource("1_lc2xo")
+
+[node name="Gondola3" parent="." instance=ExtResource("6_rvswv")]
+position = Vector2(1281, -57)
+scale = Vector2(1.76, 1.24)
+
+[node name="Gondola2" parent="." instance=ExtResource("5_e8heu")]
+position = Vector2(1739, -65)
+scale = Vector2(1.2, 1.4)
+
+[node name="Gondola1" parent="." instance=ExtResource("4_80cx4")]
+position = Vector2(795, -20)
+scale = Vector2(1.36, 1.72)
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_7sc4i")]
 position = Vector2(816, 176)
 scale = Vector2(0.447188, 0.562705)
 motion_mode = 1
 
 [node name="Escenario" type="Node2D" parent="."]
-
-[node name="Piso" type="StaticBody2D" parent="Escenario"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Escenario/Piso"]
-position = Vector2(1005.5, 653)
-scale = Vector2(1.03802, 1.2037)
-texture = ExtResource("2_215e1")
-
-[node name="Pared" type="Sprite2D" parent="Escenario"]
-position = Vector2(759.75, -136.25)
-scale = Vector2(0.975495, 1.26959)
-texture = ExtResource("1_lc2xo")
 
 [node name="GondolasLaterales" type="Node2D" parent="Escenario"]
 position = Vector2(695, 495)
@@ -103,18 +115,6 @@ position = Vector2(-238.11, 250.111)
 
 [node name="Gondolas" type="Node2D" parent="Escenario"]
 position = Vector2(57, 1089)
-
-[node name="Gondola1" parent="Escenario/Gondolas" instance=ExtResource("4_80cx4")]
-position = Vector2(738, -1109)
-scale = Vector2(1.36, 1.72)
-
-[node name="Gondola2" parent="Escenario/Gondolas" instance=ExtResource("5_e8heu")]
-position = Vector2(1682, -1154)
-scale = Vector2(1.2, 1.4)
-
-[node name="Gondola3" parent="Escenario/Gondolas" instance=ExtResource("6_rvswv")]
-position = Vector2(1224, -1146)
-scale = Vector2(1.76, 1.24)
 
 [node name="Gondola3_1" parent="Escenario/Gondolas" instance=ExtResource("6_rvswv")]
 position = Vector2(151, -1156)
