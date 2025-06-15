@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://xokqw8eypdjg" path="res://Sprite/Escenario/Pared.png" id="1_lc2xo"]
 [ext_resource type="Texture2D" uid="uid://tq5o2n2rs8t6" path="res://Sprite/Escenario/Piso.jpg" id="2_215e1"]
+[ext_resource type="PackedScene" uid="uid://bfsyx07gb65mo" path="res://Scene/npc_2.tscn" id="2_vyw1f"]
 [ext_resource type="PackedScene" uid="uid://brww7vky2ebqo" path="res://Scene/npc.tscn" id="2_yjs1f"]
 [ext_resource type="PackedScene" uid="uid://cepso5mo11glp" path="res://Scene/player.tscn" id="3_7sc4i"]
 [ext_resource type="PackedScene" uid="uid://co4anlmnn7riq" path="res://Scene/Escenario/gondola_1.tscn" id="4_80cx4"]
@@ -14,9 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://cxsex84kodkrr" path="res://Scene/Escenario/gondola_lateral_izq.tscn" id="11_qhcbd"]
 [ext_resource type="PackedScene" uid="uid://b4qtf3kv5noyh" path="res://Scene/Escenario/gondola_laterar_der.tscn" id="12_f1jbl"]
 [ext_resource type="Texture2D" uid="uid://f68ug1x2hojn" path="res://Sprite/Escenario/EspacioLimite.png" id="13_vaj68"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjs1f"]
-size = Vector2(184, 62.75)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_sqb0o"]
 a = Vector2(885.032, 115.037)
@@ -40,14 +38,13 @@ position = Vector2(1005.5, 653)
 scale = Vector2(1.03802, 1.2037)
 texture = ExtResource("2_215e1")
 
+[node name="NPC2" parent="." instance=ExtResource("2_vyw1f")]
+position = Vector2(486, 144)
+
 [node name="NPC" parent="." instance=ExtResource("2_yjs1f")]
-position = Vector2(412, 275)
+position = Vector2(1194, 558)
 collision_layer = 3
 collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(425, 617.625)
-shape = SubResource("RectangleShape2D_yjs1f")
 
 [node name="Pared" type="Sprite2D" parent="."]
 position = Vector2(759.75, -136.25)

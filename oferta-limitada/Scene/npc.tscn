@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://brww7vky2ebqo"]
+[gd_scene load_steps=19 format=3 uid="uid://brww7vky2ebqo"]
 
 [ext_resource type="Script" uid="uid://d8m40kyvhqd4" path="res://Scene/npc.gd" id="1_0j0y8"]
 [ext_resource type="Texture2D" uid="uid://cfs7wyjcvj01s" path="res://Sprite/NPC/NPC-frontal-Sheet.png" id="1_1c12l"]
+[ext_resource type="Texture2D" uid="uid://b3kay5va2mptx" path="res://Sprite/NPC/NPC-atras-Sheet.png" id="3_gvasf"]
+[ext_resource type="Texture2D" uid="uid://dnptdk5mxt3ug" path="res://Sprite/NPC/NPC-costados-Sheet.png" id="4_lr0we"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0j0y8"]
 atlas = ExtResource("1_1c12l")
@@ -17,6 +19,38 @@ region = Rect2(320, 0, 160, 260)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lr0we"]
 atlas = ExtResource("1_1c12l")
+region = Rect2(480, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xa30n"]
+atlas = ExtResource("3_gvasf")
+region = Rect2(0, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v3fx"]
+atlas = ExtResource("3_gvasf")
+region = Rect2(160, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ndqq"]
+atlas = ExtResource("3_gvasf")
+region = Rect2(320, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebufm"]
+atlas = ExtResource("3_gvasf")
+region = Rect2(480, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tf6g"]
+atlas = ExtResource("4_lr0we")
+region = Rect2(0, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxlaa"]
+atlas = ExtResource("4_lr0we")
+region = Rect2(160, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4mew"]
+atlas = ExtResource("4_lr0we")
+region = Rect2(320, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_am3ed"]
+atlas = ExtResource("4_lr0we")
 region = Rect2(480, 0, 160, 260)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xa30n"]
@@ -35,12 +69,47 @@ animations = [{
 "texture": SubResource("AtlasTexture_lr0we")
 }],
 "loop": true,
-"name": &"Caminar",
+"name": &"Caminar_Abajo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xa30n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v3fx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ndqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebufm")
+}],
+"loop": true,
+"name": &"Caminar_Arriba",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tf6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxlaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4mew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_am3ed")
+}],
+"loop": true,
+"name": &"Caminar_Costado",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1c12l"]
-size = Vector2(108, 118)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gvasf"]
+radius = 33.0
+height = 94.0
 
 [node name="NPC" type="CharacterBody2D"]
 script = ExtResource("1_0j0y8")
@@ -48,19 +117,10 @@ script = ExtResource("1_0j0y8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.44, 0.44)
 sprite_frames = SubResource("SpriteFrames_xa30n")
-animation = &"Caminar"
+animation = &"Caminar_Arriba"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_1c12l")
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(400, -1)
-
-[node name="RayCast2D2" type="RayCast2D" parent="."]
-scale = Vector2(1.005, 1.005)
-target_position = Vector2(-400, 1)
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 14)
+shape = SubResource("CapsuleShape2D_gvasf")

@@ -26,14 +26,17 @@ func flip_h():
 			is_facing_right = not is_facing_right
 
 func animacion():
-	if velocity.x:
-		animated_sprite.play("caminar_costado")
-	
-	if velocity.y > 0:
-		animated_sprite.play("caminar_abajo")
-	
-	if velocity.y < 0:
-		animated_sprite.play("caminar_arriba")
+	if velocity.x != 0 or velocity.y != 0:
+		if velocity.x:
+			animated_sprite.play("caminar_costado")
+			
+		if velocity.y > 0:
+			animated_sprite.play("caminar_abajo")
+			
+		if velocity.y < 0:
+			animated_sprite.play("caminar_arriba")
+	else:
+		animated_sprite.play("idle")
 
 func start(pos):
 	position = pos
