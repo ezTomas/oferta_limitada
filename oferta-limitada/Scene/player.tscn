@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://cepso5mo11glp"]
+[gd_scene load_steps=21 format=3 uid="uid://cepso5mo11glp"]
 
 [ext_resource type="Script" uid="uid://clskgobbnt6p3" path="res://Scene/player.gd" id="1_y8w33"]
 [ext_resource type="Texture2D" uid="uid://dniec34lyff1k" path="res://Sprite/Personaje/Adelante-Sheet 16x26.png" id="2_58ae2"]
 [ext_resource type="Texture2D" uid="uid://b6vdil3q1yglj" path="res://Sprite/Personaje/Atras-Sheet 16x26.png" id="3_ivevv"]
 [ext_resource type="Texture2D" uid="uid://cyu8uvsdxb1cr" path="res://Sprite/Personaje/Costado-Sheet 16x26.png" id="4_r6jsd"]
+[ext_resource type="Texture2D" uid="uid://baonvg2vhve81" path="res://Sprite/Personaje/Estatico-frontal.png" id="5_ivevv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p6qlh"]
 atlas = ExtResource("2_58ae2")
@@ -52,6 +53,10 @@ region = Rect2(320, 0, 160, 260)
 [sub_resource type="AtlasTexture" id="AtlasTexture_lgjog"]
 atlas = ExtResource("4_r6jsd")
 region = Rect2(480, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6jsd"]
+atlas = ExtResource("5_ivevv")
+region = Rect2(0, 0, 160, 260)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lhccw"]
 animations = [{
@@ -105,6 +110,14 @@ animations = [{
 "loop": true,
 "name": &"caminar_costado",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6jsd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y8w33"]
@@ -112,11 +125,12 @@ size = Vector2(129, 181)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(-1, 0)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_y8w33")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lhccw")
-animation = &"caminar_costado"
+animation = &"idle"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -124,4 +138,4 @@ position = Vector2(2.5, 28.5)
 shape = SubResource("RectangleShape2D_y8w33")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.78, 0.78)
+zoom = Vector2(0.81, 0.81)

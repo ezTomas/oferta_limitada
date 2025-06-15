@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://bfsyx07gb65mo"]
+
+[ext_resource type="Script" uid="uid://lultj3lugtw7" path="res://Scene/npc_2.gd" id="1_aij6o"]
+[ext_resource type="Texture2D" uid="uid://dnptdk5mxt3ug" path="res://Sprite/NPC/NPC-costados-Sheet.png" id="1_jxubm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aij6o"]
+atlas = ExtResource("1_jxubm")
+region = Rect2(0, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c2mj"]
+atlas = ExtResource("1_jxubm")
+region = Rect2(160, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35y24"]
+atlas = ExtResource("1_jxubm")
+region = Rect2(320, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu7u3"]
+atlas = ExtResource("1_jxubm")
+region = Rect2(480, 0, 160, 260)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6d2ro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aij6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6c2mj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35y24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu7u3")
+}],
+"loop": true,
+"name": &"Costado",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aij6o"]
+radius = 30.0
+height = 86.0
+
+[node name="NPC2" type="CharacterBody2D"]
+script = ExtResource("1_aij6o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.44, 0.44)
+sprite_frames = SubResource("SpriteFrames_6d2ro")
+animation = &"Costado"
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 10)
+shape = SubResource("CapsuleShape2D_aij6o")
