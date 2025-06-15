@@ -21,9 +21,10 @@ func move_y():
 	velocity.y = input_axis_y * speed
 
 func flip_h():
+	#si el jugador mira a la derecha y se mueve a la izquierda o si el juagdor mira a la izquierda y se mueve a la derecha
 	if (is_facing_right and velocity.x < 0) or (not is_facing_right and velocity.x > 0):
-			scale.x *= -1
-			is_facing_right = not is_facing_right
+			scale.x *= -1 #multiplica la escala en -1. Si era 1 pasa a ser -1 y si era -1 pasa a ser 1
+			is_facing_right = not is_facing_right #cambia el booleano entre true y false segun corresponda
 
 func animacion():
 	if velocity.x != 0 or velocity.y != 0:

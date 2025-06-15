@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
-@export var speed : float = 70
-@export var max_distancia : float = 300
-@export var direccion : Vector2 = Vector2.DOWN
+@export var speed : float = 70 #Variable de velocidad
+@export var max_distancia : float = 300 #Distancia maxima de movimiento
+@export var direccion : Vector2 = Vector2.DOWN #Direccion incial de movimiento
 
-@onready var animation_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var start_position: Vector2 = global_position
+@onready var animation_sprite: AnimatedSprite2D = $AnimatedSprite2D #Referencia el AnimatedSprite2D
+@onready var start_position: Vector2 = global_position #Toma la ubicacion del character dentro de la escena "game"
 
-var direccion_movimiento: Vector2 
+var direccion_movimiento: Vector2 #Variable para la referencia del movimiento
 var moviendo_abajo = true #Variable para saber si se mueve para abajo
 
 func _ready() -> void:
