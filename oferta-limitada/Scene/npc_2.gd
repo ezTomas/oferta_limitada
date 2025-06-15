@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed : float = 70
-@export var max_distancia : float = 300
+@export var max_distancia : float = 190
 @export var direccion : Vector2 = Vector2.LEFT
 var is_facing_right: bool = true
 
