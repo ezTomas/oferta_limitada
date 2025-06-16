@@ -1,10 +1,16 @@
-[gd_scene load_steps=22 format=3 uid="uid://cepso5mo11glp"]
+[gd_scene load_steps=28 format=3 uid="uid://cepso5mo11glp"]
 
 [ext_resource type="Script" uid="uid://clskgobbnt6p3" path="res://Scene/player.gd" id="1_y8w33"]
 [ext_resource type="Texture2D" uid="uid://dniec34lyff1k" path="res://Sprite/Personaje/Adelante-Sheet 16x26.png" id="2_58ae2"]
 [ext_resource type="Texture2D" uid="uid://b6vdil3q1yglj" path="res://Sprite/Personaje/Atras-Sheet 16x26.png" id="3_ivevv"]
 [ext_resource type="Texture2D" uid="uid://cyu8uvsdxb1cr" path="res://Sprite/Personaje/Costado-Sheet 16x26.png" id="4_r6jsd"]
 [ext_resource type="Texture2D" uid="uid://baonvg2vhve81" path="res://Sprite/Personaje/Estatico-frontal.png" id="5_ivevv"]
+[ext_resource type="Texture2D" uid="uid://ctyvev74tr3u5" path="res://Sprite/Interface/Listado-de-compras.png" id="6_c68nv"]
+[ext_resource type="Texture2D" uid="uid://bvqt5txe5bhit" path="res://Sprite/Items/Tomate.png" id="7_c68nv"]
+[ext_resource type="Texture2D" uid="uid://cvq52dum6dj3y" path="res://Sprite/Items/Naranja.png" id="8_c31lq"]
+[ext_resource type="Texture2D" uid="uid://doy2fp0hhapuh" path="res://Sprite/Items/Carne.png" id="9_2dof7"]
+[ext_resource type="Texture2D" uid="uid://dhys6evnryb44" path="res://Sprite/Items/Agua.png" id="10_4ao7i"]
+[ext_resource type="Texture2D" uid="uid://7wjksm7yir0v" path="res://Sprite/Items/Picante.png" id="11_c31lq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p6qlh"]
 atlas = ExtResource("2_58ae2")
@@ -126,7 +132,7 @@ size = Vector2(129, 181)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ivevv"]
 radius = 75.9253
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 position = Vector2(-1, 0)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_y8w33")
@@ -141,9 +147,14 @@ position = Vector2(2.5, 28.5)
 shape = SubResource("RectangleShape2D_y8w33")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.81, 0.81)
+visible = false
+zoom = Vector2(0.915, 0.915)
+limit_left = 0
+limit_top = -250
+limit_right = 2100
+limit_bottom = 1450
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["player"]]
 scale = Vector2(3.72, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -151,4 +162,55 @@ position = Vector2(0, 24)
 scale = Vector2(0.311831, 1.68266)
 shape = SubResource("CircleShape2D_ivevv")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -333.0
+offset_bottom = 424.0
+grow_horizontal = 0
+scale = Vector2(1, 1.00407)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("6_c68nv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -996.0
+offset_right = 996.0
+offset_bottom = 691.0
+grow_horizontal = 2
+
+[node name="Tomate" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_c68nv")
+
+[node name="Naranja" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_c31lq")
+
+[node name="Carne" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_2dof7")
+
+[node name="Agua" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("10_4ao7i")
+
+[node name="Picante" type="TextureRect" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("11_c31lq")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://bie8y2j2k8hqt"]
+
+[ext_resource type="Script" uid="uid://r6aw7ofvqnhw" path="res://Scene/Interface/menu_principal.gd" id="1_6n5gr"]
+[ext_resource type="Texture2D" uid="uid://cck4lebe1iumr" path="res://Sprite/Interface/Fondo menú.jpg" id="2_r04h4"]
+[ext_resource type="Texture2D" uid="uid://caud3kkdrambr" path="res://Sprite/Interface/Botones/Jugar.jpg" id="3_wpp4m"]
+[ext_resource type="Texture2D" uid="uid://cvq5xbo2bjemv" path="res://Sprite/Interface/Botones/Controles.jpg" id="4_2keqt"]
+[ext_resource type="Texture2D" uid="uid://bw71ku8x1lfjp" path="res://Sprite/Interface/Botones/Salir.jpg" id="5_a17kf"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6n5gr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_r04h4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -424.0
+offset_top = -275.0
+offset_right = 424.0
+offset_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Jugar" type="Button" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("3_wpp4m")
+
+[node name="MarginContainer2" type="MarginContainer" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+
+[node name="Controles" type="Button" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("4_2keqt")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 50
+
+[node name="Salir" type="Button" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("5_a17kf")
+
+[connection signal="pressed" from="TextureRect/VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/Controles" to="." method="_on_controles_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/Salir" to="." method="_on_salir_pressed"]

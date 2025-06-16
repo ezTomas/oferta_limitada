@@ -118,7 +118,7 @@ height = 86.0
 [node name="NPC_Prinpipal" type="CharacterBody2D"]
 script = ExtResource("1_jksto")
 
-[node name="Area2D" type="Area2D" parent="." groups=["npc_dialogo"]]
+[node name="Area2D" type="Area2D" parent="." groups=["npc_dialogo", "npc_malo"]]
 position = Vector2(-1, 10)
 scale = Vector2(0.520001, 0.68)
 
