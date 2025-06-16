@@ -76,7 +76,7 @@ scale = Vector2(0.447188, 0.562705)
 motion_mode = 1
 
 [node name="NPC_Prinpipal" parent="." instance=ExtResource("16_cvvdq")]
-position = Vector2(1838, 388)
+position = Vector2(1802, 57)
 
 [node name="Escenario" type="Node2D" parent="."]
 
@@ -198,4 +198,4 @@ position = Vector2(1799, 1192)
 position = Vector2(252, 624)
 
 [node name="Area2D2" parent="Items" instance=ExtResource("22_mo8cs")]
-position = Vector2(1825, 651)
+position = Vector2(1762, -5)

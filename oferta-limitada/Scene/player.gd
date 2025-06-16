@@ -3,6 +3,8 @@ class_name player
 
 var is_facing_right: bool = true
 var tomate: PackedScene =  preload("res://Scene/items/tomate.tscn")
+var lista_completa: bool = false
+
 @export var speed: float = 300
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -11,7 +13,7 @@ var tomate: PackedScene =  preload("res://Scene/items/tomate.tscn")
 @onready var naranja_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/VBoxContainer/Naranja
 @onready var carne_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/VBoxContainer/Carne
 @onready var agua_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/HBoxContainer/Agua
-@onready var picante_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/Picante
+@onready var picante_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/Picante
 
 func _ready() -> void:
 	interfaz.visible = false
@@ -27,6 +29,9 @@ func item_recogido(nombre: String):
 			carne_lista.visible = false
 		"agua":
 			agua_lista.visible = false
+		"picante":
+			if lista_completa:
+				get_tree().change_scene_to_file("res://Scene/Interface/ganar.tscn")
 
 func abrir_lista():
 	if Input.is_action_pressed("Lista"):
@@ -41,6 +46,9 @@ func _process(delta: float) -> void:
 func picante():
 	if (tomate_lista.visible == false and naranja_lista.visible == false) and (agua_lista.visible == false and carne_lista.visible == false):
 		picante_lista.visible = true
+		lista_completa = true
+
+
 
 func _physics_process(delta: float) -> void:
 	move_x()

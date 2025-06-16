@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvq5xbo2bjemv"
-path="res://.godot/imported/Controles.jpg-e158d757ae5446d98a7adb333f73f1f3.ctex"
+uid="uid://ddg4ettvqxlkh"
+path="res://.godot/imported/jugar.png-a829a6158f2483e15ed421bf1006503a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/Interface/Botones/Controles.jpg"
-dest_files=["res://.godot/imported/Controles.jpg-e158d757ae5446d98a7adb333f73f1f3.ctex"]
+source_file="res://Sprite/Interface/Botones/jugar.png"
+dest_files=["res://.godot/imported/jugar.png-a829a6158f2483e15ed421bf1006503a.ctex"]
 
 [params]
 

@@ -115,7 +115,7 @@ animations = [{
 radius = 28.0
 height = 86.0
 
-[node name="NPC_Prinpipal" type="CharacterBody2D"]
+[node name="NPC_Prinpipal" type="CharacterBody2D" groups=["npc_malo"]]
 script = ExtResource("1_jksto")
 
 [node name="Area2D" type="Area2D" parent="." groups=["npc_dialogo", "npc_malo"]]

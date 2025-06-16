@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7wjksm7yir0v"
-path="res://.godot/imported/Picante.png-600a0c2451a7ddbea820023ca67f2a8f.ctex"
+uid="uid://ct2v2nw63yye4"
+path="res://.godot/imported/Controles.png-40df068a1216567ca3682de8e53679f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/Items/Picante.png"
-dest_files=["res://.godot/imported/Picante.png-600a0c2451a7ddbea820023ca67f2a8f.ctex"]
+source_file="res://Sprite/Interface/Botones/Controles.png"
+dest_files=["res://.godot/imported/Controles.png-40df068a1216567ca3682de8e53679f0.ctex"]
 
 [params]
 

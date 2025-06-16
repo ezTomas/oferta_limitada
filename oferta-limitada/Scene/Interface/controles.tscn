@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://1cwriatkfp6u" path="res://Scene/Interface/controles.gd" id="1_0wb21"]
 [ext_resource type="Texture2D" uid="uid://dyudbdcimdoxo" path="res://Sprite/Interface/Controles-menú (1).jpg" id="1_asi7a"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_asi7a"]
-bg_color = Color(0.420704, 0.343807, 0.398176, 1)
+[ext_resource type="Texture2D" uid="uid://ddl80f7fxd0fk" path="res://Sprite/Interface/Botones/volver.jpg" id="3_0wb21"]
 
 [node name="Controles" type="Control"]
 layout_mode = 3
@@ -30,11 +28,9 @@ layout_mode = 1
 offset_right = 433.0
 offset_bottom = 149.0
 
-[node name="Salir" type="Button" parent="TextureRect/HBoxContainer"]
+[node name="Button" type="Button" parent="TextureRect/HBoxContainer"]
 layout_mode = 2
-theme_override_colors/icon_pressed_color = Color(0.219608, 0, 0.109804, 1)
-theme_override_font_sizes/font_size = 71
-theme_override_styles/normal = SubResource("StyleBoxFlat_asi7a")
-text = "Volver"
+icon = ExtResource("3_0wb21")
+flat = true
 
-[connection signal="pressed" from="TextureRect/HBoxContainer/Salir" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureRect/HBoxContainer/Button" to="." method="_on_button_pressed"]
