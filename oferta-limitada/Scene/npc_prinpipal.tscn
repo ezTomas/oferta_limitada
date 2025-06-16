@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://j2lvf60hmnpe"]
+
+[ext_resource type="Script" uid="uid://bppdjglb2k7bk" path="res://Scene/npc_prinpipal.gd" id="1_jksto"]
+[ext_resource type="Texture2D" uid="uid://dnptdk5mxt3ug" path="res://Sprite/NPC/NPC-costados-Sheet.png" id="2_xkf70"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xkf70"]
+radius = 79.5455
+height = 159.091
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0258"]
+atlas = ExtResource("2_xkf70")
+region = Rect2(0, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqo1u"]
+atlas = ExtResource("2_xkf70")
+region = Rect2(160, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3356a"]
+atlas = ExtResource("2_xkf70")
+region = Rect2(320, 0, 160, 260)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayjha"]
+atlas = ExtResource("2_xkf70")
+region = Rect2(480, 0, 160, 260)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rvqf7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0258")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqo1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3356a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayjha")
+}],
+"loop": true,
+"name": &"Caminar",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jksto"]
+radius = 28.0
+height = 86.0
+
+[node name="NPC_Prinpipal" type="CharacterBody2D"]
+script = ExtResource("1_jksto")
+
+[node name="Area2D" type="Area2D" parent="." groups=["npc_dialogo"]]
+scale = Vector2(0.44, 0.44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_xkf70")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.44, 0.44)
+sprite_frames = SubResource("SpriteFrames_rvqf7")
+animation = &"Caminar"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 11)
+shape = SubResource("CapsuleShape2D_jksto")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

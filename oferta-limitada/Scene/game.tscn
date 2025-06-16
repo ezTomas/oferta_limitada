@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://y3wspxw8hkle"]
+[gd_scene load_steps=21 format=3 uid="uid://y3wspxw8hkle"]
 
 [ext_resource type="Texture2D" uid="uid://xokqw8eypdjg" path="res://Sprite/Escenario/Pared.png" id="1_lc2xo"]
 [ext_resource type="Texture2D" uid="uid://tq5o2n2rs8t6" path="res://Sprite/Escenario/Piso.jpg" id="2_215e1"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cxsex84kodkrr" path="res://Scene/Escenario/gondola_lateral_izq.tscn" id="11_qhcbd"]
 [ext_resource type="PackedScene" uid="uid://b4qtf3kv5noyh" path="res://Scene/Escenario/gondola_laterar_der.tscn" id="12_f1jbl"]
 [ext_resource type="Texture2D" uid="uid://f68ug1x2hojn" path="res://Sprite/Escenario/EspacioLimite.png" id="13_vaj68"]
+[ext_resource type="PackedScene" uid="uid://j2lvf60hmnpe" path="res://Scene/npc_prinpipal.tscn" id="16_cvvdq"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_sqb0o"]
 a = Vector2(885.032, 115.037)
@@ -68,6 +69,9 @@ position = Vector2(816, 176)
 scale = Vector2(0.447188, 0.562705)
 motion_mode = 1
 
+[node name="NPC_Prinpipal" parent="." instance=ExtResource("16_cvvdq")]
+position = Vector2(1283, 1082)
+
 [node name="Escenario" type="Node2D" parent="."]
 
 [node name="GondolasLaterales" type="Node2D" parent="Escenario"]
@@ -98,12 +102,15 @@ scale = Vector2(1.5119, 1.10751)
 
 [node name="GondolaMedio3" parent="Escenario/GondolasMedio" instance=ExtResource("10_x5p1p")]
 position = Vector2(187.181, -130.022)
+metadata/_edit_group_ = true
 
 [node name="GondolaMedio2" parent="Escenario/GondolasMedio" instance=ExtResource("10_x5p1p")]
 position = Vector2(187.181, 61.3991)
+metadata/_edit_group_ = true
 
 [node name="GondolaMedio" parent="Escenario/GondolasMedio" instance=ExtResource("10_x5p1p")]
 position = Vector2(185.859, 253.723)
+metadata/_edit_group_ = true
 
 [node name="GondolaMedio6" parent="Escenario/GondolasMedio" instance=ExtResource("10_x5p1p")]
 position = Vector2(-25.7952, -130.022)
