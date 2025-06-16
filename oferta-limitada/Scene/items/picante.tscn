@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://cil64r1mam11b" path="res://Sprite/Items/bien/picante.png" id="2_d5r1x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d5r1x"]
-radius = 13.0
-height = 46.0
+radius = 23.8619
+height = 47.7238
 
 [node name="Picante" type="Area2D" groups=["items"]]
-scale = Vector2(2.95153, 2.95153)
+scale = Vector2(1.46677, 1.46677)
 script = ExtResource("1_d5r1x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

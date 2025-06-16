@@ -183,7 +183,7 @@ shape = SubResource("RectangleShape2D_m52p7")
 [node name="Items" type="Node2D" parent="."]
 
 [node name="Area2D2" parent="Items" instance=ExtResource("22_mo8cs")]
-position = Vector2(466, -44)
+position = Vector2(758, 657)
 
 [node name="Naranje" parent="Items" instance=ExtResource("17_gji41")]
 position = Vector2(1385, 765)
