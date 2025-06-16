@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dqw84khjycpv4"
+path="res://.godot/imported/dialogo_npc_negativo1.dialogue-cc8928837116b1e898cba28182d257d1.tres"
+
+[deps]
+
+source_file="res://Dialogos/dialogo_npc_negativo1.dialogue"
+dest_files=["res://.godot/imported/dialogo_npc_negativo1.dialogue-cc8928837116b1e898cba28182d257d1.tres"]
+
+[params]
+
+defaults=true

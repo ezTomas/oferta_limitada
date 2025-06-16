@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name player
 
 var is_facing_right: bool = true
+
 @export var speed: float = 300
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -38,7 +39,3 @@ func animacion():
 			animated_sprite.play("caminar_arriba")
 	else:
 		animated_sprite.play("idle")
-
-func start(pos):
-	position = pos
-	show()
