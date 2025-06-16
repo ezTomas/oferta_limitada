@@ -52,8 +52,8 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="Pared" type="Sprite2D" parent="."]
-position = Vector2(1048, -128)
-scale = Vector2(0.695494, 1.25753)
+position = Vector2(759.75, -136.25)
+scale = Vector2(0.975495, 1.26959)
 texture = ExtResource("1_lc2xo")
 
 [node name="Gondola3" parent="." instance=ExtResource("6_rvswv")]

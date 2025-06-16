@@ -55,10 +55,12 @@ func _on_timer_timeout() -> void:
 	nueva_direccion()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	is_player_close = true
+	if area.is_in_group("player"):
+		is_player_close = true
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	is_player_close = false
+	if area.is_in_group("player"):
+		is_player_close = false
 
 func _on_dialogue_start(dialogue):
 	is_dialogue_active = true

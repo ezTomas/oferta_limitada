@@ -2,9 +2,40 @@ extends CharacterBody2D
 class_name player
 
 var is_facing_right: bool = true
-
+var tomate: PackedScene =  preload("res://Scene/items/tomate.tscn")
 @export var speed: float = 300
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+@onready var interfaz: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2
+@onready var tomate_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/HBoxContainer/Tomate
+@onready var naranja_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/HBoxContainer/Naranja
+@onready var carne_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/HBoxContainer/Carne
+@onready var agua_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/HBoxContainer/Agua
+
+func _ready() -> void:
+	interfaz.visible = false
+
+func item_recogido(nombre: String):
+	match nombre:
+		"tomate":
+			tomate_lista.visible = false
+		"naranja":
+			naranja_lista.visible = false
+		"carne":
+			carne_lista.visible = false
+		"agua":
+			agua_lista.visible = false
+
+
+func abrir_lista():
+	if Input.is_action_pressed("Lista"):
+		interfaz.visible = true
+	else:
+		interfaz.visible = false
+
+func _process(delta: float) -> void:
+	abrir_lista()
+
 
 func _physics_process(delta: float) -> void:
 	move_x()
@@ -39,3 +70,7 @@ func animacion():
 			animated_sprite.play("caminar_arriba")
 	else:
 		animated_sprite.play("idle")
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	pass
