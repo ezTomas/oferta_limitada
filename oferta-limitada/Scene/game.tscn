@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://xokqw8eypdjg" path="res://Sprite/Escenario/Pared.png" id="1_lc2xo"]
 [ext_resource type="Texture2D" uid="uid://tq5o2n2rs8t6" path="res://Sprite/Escenario/Piso.jpg" id="2_215e1"]
-[ext_resource type="PackedScene" uid="uid://bfsyx07gb65mo" path="res://Scene/npc_2.tscn" id="2_vyw1f"]
-[ext_resource type="PackedScene" uid="uid://brww7vky2ebqo" path="res://Scene/npc.tscn" id="2_yjs1f"]
+[ext_resource type="PackedScene" uid="uid://bfsyx07gb65mo" path="res://Scene/NPC/NPC bueno/npc_2.tscn" id="2_vyw1f"]
+[ext_resource type="PackedScene" uid="uid://brww7vky2ebqo" path="res://Scene/NPC/NPC bueno/npc.tscn" id="2_yjs1f"]
 [ext_resource type="PackedScene" uid="uid://cepso5mo11glp" path="res://Scene/player.tscn" id="3_7sc4i"]
 [ext_resource type="PackedScene" uid="uid://co4anlmnn7riq" path="res://Scene/Escenario/gondola_1.tscn" id="4_80cx4"]
 [ext_resource type="PackedScene" uid="uid://gsnn2u4ykvi1" path="res://Scene/Escenario/gondola_2.tscn" id="5_e8heu"]
@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cxsex84kodkrr" path="res://Scene/Escenario/gondola_lateral_izq.tscn" id="11_qhcbd"]
 [ext_resource type="PackedScene" uid="uid://b4qtf3kv5noyh" path="res://Scene/Escenario/gondola_laterar_der.tscn" id="12_f1jbl"]
 [ext_resource type="Texture2D" uid="uid://f68ug1x2hojn" path="res://Sprite/Escenario/EspacioLimite.png" id="13_vaj68"]
-[ext_resource type="PackedScene" uid="uid://j2lvf60hmnpe" path="res://Scene/npc_prinpipal.tscn" id="16_cvvdq"]
+[ext_resource type="PackedScene" uid="uid://j2lvf60hmnpe" path="res://Scene/NPC/NPC malo/npc_prinpipal.tscn" id="16_cvvdq"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_sqb0o"]
 a = Vector2(885.032, 115.037)

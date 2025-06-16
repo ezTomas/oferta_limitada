@@ -124,7 +124,7 @@ animations = [{
 size = Vector2(129, 181)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ivevv"]
-radius = 78.2304
+radius = 75.9253
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(-1, 0)
@@ -147,7 +147,8 @@ zoom = Vector2(0.81, 0.81)
 scale = Vector2(3.72, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(0.290325, 1.09996)
+position = Vector2(0, 24)
+scale = Vector2(0.311831, 1.68266)
 shape = SubResource("CircleShape2D_ivevv")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

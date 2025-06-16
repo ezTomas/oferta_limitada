@@ -10,8 +10,17 @@ extends CharacterBody2D
 var direccion_movimiento: Vector2 #Variable para la referencia del movimiento
 var moviendo_abajo = true #Variable para saber si se mueve para abajo
 
+const NPC_BUENO_2 = preload("res://Dialogos/npc_bueno2.dialogue")
+var is_player_close = false
+var is_dialogue_active = false
+
+func _process(delta: float) -> void:
+	if is_player_close and not is_dialogue_active:
+		DialogueManager.show_dialogue_balloon(NPC_BUENO_2, "start")
+
 func _ready() -> void:
-	pass
+	DialogueManager.dialogue_started.connect(_on_dialogue_start)
+	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 
 func _physics_process(delta: float) -> void:
 	if moviendo_abajo:  #Si se mueve para la direccion que se indica con la variable "Direccion"
@@ -27,3 +36,20 @@ func _physics_process(delta: float) -> void:
 	if global_position.distance_to(start_position) > max_distancia: 
 		#si es mayor cambia la variable para que se mueva en direccion contraria
 		moviendo_abajo = not moviendo_abajo
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	is_player_close = true
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	is_player_close = false
+
+func _on_dialogue_start(dialogue):
+	is_dialogue_active = true
+	speed = 0
+
+func _on_dialogue_ended(dialogue):
+	await get_tree().create_timer(3).timeout
+	is_dialogue_active = false
+	speed = 70

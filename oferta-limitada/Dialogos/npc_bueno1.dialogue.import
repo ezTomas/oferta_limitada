@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cni17n7iqn20g"
+path="res://.godot/imported/npc_bueno1.dialogue-0f20529e0ab2ed30faec844fcab71e74.tres"
+
+[deps]
+
+source_file="res://Dialogos/npc_bueno1.dialogue"
+dest_files=["res://.godot/imported/npc_bueno1.dialogue-0f20529e0ab2ed30faec844fcab71e74.tres"]
+
+[params]
+
+defaults=true
