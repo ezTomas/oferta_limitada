@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://y3wspxw8hkle"]
+[gd_scene load_steps=26 format=3 uid="uid://y3wspxw8hkle"]
 
 [ext_resource type="Texture2D" uid="uid://xokqw8eypdjg" path="res://Sprite/Escenario/Pared.png" id="1_lc2xo"]
 [ext_resource type="Texture2D" uid="uid://tq5o2n2rs8t6" path="res://Sprite/Escenario/Piso.jpg" id="2_215e1"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bkq3xn3sgepny" path="res://Scene/items/carne.tscn" id="18_5smqc"]
 [ext_resource type="PackedScene" uid="uid://5onm8gcyrwmf" path="res://Scene/items/tomate.tscn" id="19_mo8cs"]
 [ext_resource type="PackedScene" uid="uid://ljoqqca1vfui" path="res://Scene/items/aguaç.tscn" id="20_nnpbk"]
+[ext_resource type="PackedScene" uid="uid://cv20pjpvn43dh" path="res://Scene/items/enegy.tscn" id="21_5smqc"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_sqb0o"]
 a = Vector2(885.032, 115.037)
@@ -191,3 +192,6 @@ position = Vector2(786, -35)
 
 [node name="Aguaç" parent="Items" instance=ExtResource("20_nnpbk")]
 position = Vector2(1799, 1192)
+
+[node name="Area2D" parent="Items" instance=ExtResource("21_5smqc")]
+position = Vector2(252, 624)

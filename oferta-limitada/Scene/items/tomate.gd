@@ -1,6 +1,5 @@
 extends Area2D
 
-
 var interactuar: bool = false
 var recogido: bool = false
 

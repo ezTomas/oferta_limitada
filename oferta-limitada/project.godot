@@ -38,6 +38,7 @@ npc_dialogo=""
 player=""
 npc_malo=""
 items=""
+energy=""
 
 [input]
 

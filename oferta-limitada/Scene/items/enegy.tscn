@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv20pjpvn43dh"]
+
+[ext_resource type="Texture2D" uid="uid://c2ct218wfqj07" path="res://Sprite/Interface/Botones/Bebida-energetica.png" id="1_kpm5j"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0lnsv"]
+radius = 41.0
+height = 148.0
+
+[node name="Area2D" type="Area2D" groups=["energy"]]
+scale = Vector2(0.600001, 0.600001)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_0lnsv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.35, 0.4)
+texture = ExtResource("1_kpm5j")

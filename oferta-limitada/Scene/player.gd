@@ -7,11 +7,11 @@ var tomate: PackedScene =  preload("res://Scene/items/tomate.tscn")
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 @onready var interfaz: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2
-@onready var tomate_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/HBoxContainer/Tomate
-@onready var naranja_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/HBoxContainer/Naranja
-@onready var carne_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/HBoxContainer/Carne
+@onready var tomate_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/VBoxContainer/Tomate
+@onready var naranja_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/VBoxContainer/Naranja
+@onready var carne_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/VBoxContainer/Carne
 @onready var agua_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/HBoxContainer/Agua
-@onready var picante_lista: TextureRect = $CanvasLayer/VBoxContainer/Picante
+@onready var picante_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/Picante
 
 func _ready() -> void:
 	interfaz.visible = false
@@ -28,7 +28,6 @@ func item_recogido(nombre: String):
 		"agua":
 			agua_lista.visible = false
 
-
 func abrir_lista():
 	if Input.is_action_pressed("Lista"):
 		interfaz.visible = true
@@ -37,7 +36,11 @@ func abrir_lista():
 
 func _process(delta: float) -> void:
 	abrir_lista()
+	picante()
 
+func picante():
+	if (tomate_lista.visible == false and naranja_lista.visible == false) and (agua_lista.visible == false and carne_lista.visible == false):
+		picante_lista.visible = true
 
 func _physics_process(delta: float) -> void:
 	move_x()
@@ -73,6 +76,9 @@ func animacion():
 	else:
 		animated_sprite.play("idle")
 
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	pass
+	if area.is_in_group("energy"):
+		speed = 400
+		area.queue_free()
+		await get_tree().create_timer(3).timeout
+		speed = 300
