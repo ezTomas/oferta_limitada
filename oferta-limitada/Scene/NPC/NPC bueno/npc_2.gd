@@ -62,6 +62,7 @@ func _on_dialogue_start(dialogue):
 	speed = 0
 
 func _on_dialogue_ended(dialogue):
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(1.5).timeout
 	is_dialogue_active = false
+	
 	speed = 70
