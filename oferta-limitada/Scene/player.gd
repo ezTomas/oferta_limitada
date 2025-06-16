@@ -11,9 +11,11 @@ var tomate: PackedScene =  preload("res://Scene/items/tomate.tscn")
 @onready var naranja_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/HBoxContainer/Naranja
 @onready var carne_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/HBoxContainer/Carne
 @onready var agua_lista: TextureRect = $CanvasLayer/VBoxContainer/HBoxContainer2/TextureRect2/HBoxContainer/Agua
+@onready var picante_lista: TextureRect = $CanvasLayer/VBoxContainer/Picante
 
 func _ready() -> void:
 	interfaz.visible = false
+	picante_lista.visible = false
 
 func item_recogido(nombre: String):
 	match nombre:

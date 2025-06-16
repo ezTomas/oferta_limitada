@@ -148,7 +148,11 @@ shape = SubResource("RectangleShape2D_y8w33")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
-zoom = Vector2(0.81, 0.81)
+zoom = Vector2(0.915, 0.915)
+limit_left = 0
+limit_top = -250
+limit_right = 2100
+limit_bottom = 1450
 
 [node name="Area2D" type="Area2D" parent="." groups=["player"]]
 scale = Vector2(3.72, 1)

@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Oferta Limitada"
+run/main_scene="uid://bie8y2j2k8hqt"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
