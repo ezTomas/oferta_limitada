@@ -71,12 +71,12 @@ position = Vector2(795, -20)
 scale = Vector2(1.36, 1.72)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_7sc4i")]
-position = Vector2(816, 176)
+position = Vector2(351, 1231)
 scale = Vector2(0.447188, 0.562705)
 motion_mode = 1
 
 [node name="NPC_Prinpipal" parent="." instance=ExtResource("16_cvvdq")]
-position = Vector2(1838, 388)
+position = Vector2(1953, 1045)
 
 [node name="Escenario" type="Node2D" parent="."]
 
@@ -182,6 +182,9 @@ shape = SubResource("RectangleShape2D_m52p7")
 
 [node name="Items" type="Node2D" parent="."]
 
+[node name="Area2D2" parent="Items" instance=ExtResource("22_mo8cs")]
+position = Vector2(466, -44)
+
 [node name="Naranje" parent="Items" instance=ExtResource("17_gji41")]
 position = Vector2(1385, 765)
 
@@ -194,8 +197,5 @@ position = Vector2(786, -35)
 [node name="Aguaç" parent="Items" instance=ExtResource("20_nnpbk")]
 position = Vector2(1799, 1192)
 
-[node name="Area2D" parent="Items" instance=ExtResource("21_5smqc")]
-position = Vector2(252, 624)
-
-[node name="Area2D2" parent="Items" instance=ExtResource("22_mo8cs")]
-position = Vector2(1825, 651)
+[node name="Energy" parent="Items" instance=ExtResource("21_5smqc")]
+position = Vector2(312, 618)
