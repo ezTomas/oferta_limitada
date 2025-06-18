@@ -1,13 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://be58wxkggb7ut"]
+[gd_scene load_steps=3 format=3 uid="uid://be58wxkggb7ut"]
 
-[ext_resource type="Script" uid="uid://dkbc77sccs5dy" path="res://Scene/items/script/tomate.gd" id="1_pp5xg"]
 [ext_resource type="Texture2D" uid="uid://bk7ont7ily4tb" path="res://Sprite/Items/Chocolate.png" id="2_xysi0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a7rhw"]
 radius = 59.0
 
 [node name="Chocolate" type="Area2D" groups=["items"]]
-script = ExtResource("1_pp5xg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_a7rhw")

@@ -1,13 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dy3ewhyy5c3vn"]
+[gd_scene load_steps=3 format=3 uid="uid://dy3ewhyy5c3vn"]
 
-[ext_resource type="Script" uid="uid://dkbc77sccs5dy" path="res://Scene/items/script/tomate.gd" id="1_plnl3"]
 [ext_resource type="Texture2D" uid="uid://cxuqa3bcal5vt" path="res://Sprite/Items/Huevos.png" id="2_jf6ec"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a7rhw"]
 radius = 59.0
 
 [node name="Huevos" type="Area2D" groups=["items"]]
-script = ExtResource("1_plnl3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_a7rhw")

@@ -85,13 +85,13 @@ scale = Vector2(1.76, 1.24)
 position = Vector2(208, -67)
 scale = Vector2(1.56, 1.32)
 
+[node name="NPC_Prinpipal" parent="." instance=ExtResource("16_cvvdq")]
+position = Vector2(1816, 138)
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_7sc4i")]
 position = Vector2(351, 1231)
 scale = Vector2(0.447188, 0.562705)
 motion_mode = 1
-
-[node name="NPC_Prinpipal" parent="." instance=ExtResource("16_cvvdq")]
-position = Vector2(1190, 392)
 
 [node name="Escenario" type="Node2D" parent="."]
 
