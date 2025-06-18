@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4fahhl75vrt2"]
+
+[ext_resource type="Script" uid="uid://dkbc77sccs5dy" path="res://Scene/items/script/tomate.gd" id="1_cori3"]
+[ext_resource type="Texture2D" uid="uid://d4jhg3m7arhxh" path="res://Sprite/Items/Banana.png" id="2_ca7bs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a7rhw"]
+radius = 59.0
+
+[node name="Banana" type="Area2D" groups=["items"]]
+script = ExtResource("1_cori3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_a7rhw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.100961, 0.100962)
+texture = ExtResource("2_ca7bs")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -9,10 +9,7 @@ var is_facing_right: bool = true
 const DIALOGO_NPC_NEGATIVO_1 = preload("res://Dialogos/dialogo_npc_negativo1.dialogue")
 var is_player_close: bool = false
 var is_dialogue_active: bool = false
-
-func _process(delta: float) -> void:
-	if is_player_close and not is_dialogue_active:
-		DialogueManager.show_dialogue_balloon(DIALOGO_NPC_NEGATIVO_1, "start")
+@onready var jugador = get_tree().get_nodes_in_group("player")
 
 func _ready() -> void:
 	DialogueManager.dialogue_started.connect(_on_dialogue_start)
@@ -55,18 +52,23 @@ func _on_timer_timeout() -> void:
 	nueva_direccion()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	var jugador = get_tree().get_nodes_in_group("player")
 	if area.is_in_group("player"):
 		is_player_close = true
-
+	if is_player_close and not is_dialogue_active:
+		speed = 0
+		DialogueManager.show_dialogue_balloon(DIALOGO_NPC_NEGATIVO_1, "start")
+		jugador[0].speed = 0
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.is_in_group("player"):
 		is_player_close = false
+		is_dialogue_active = true
 
 func _on_dialogue_start(dialogue):
-	is_dialogue_active = true
-	speed = 0
+	pass
 
 func _on_dialogue_ended(dialogue):
 	await get_tree().create_timer(1.5).timeout
 	is_dialogue_active = false
 	speed = 190
+	jugador[0].speed = 300

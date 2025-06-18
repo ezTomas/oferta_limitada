@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cepso5mo11glp"]
+[gd_scene load_steps=29 format=3 uid="uid://cepso5mo11glp"]
 
 [ext_resource type="Script" uid="uid://clskgobbnt6p3" path="res://Scene/player.gd" id="1_y8w33"]
 [ext_resource type="Texture2D" uid="uid://dniec34lyff1k" path="res://Sprite/Personaje/Adelante-Sheet 16x26.png" id="2_58ae2"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b6dhuqkinp0p5" path="res://Sprite/Items/bien/carne.webp" id="8_2dof7"]
 [ext_resource type="Texture2D" uid="uid://ebnduu2h4pc4" path="res://Sprite/Items/bien/naranja.webp" id="9_4ao7i"]
 [ext_resource type="Texture2D" uid="uid://rceq3cxkcawv" path="res://Sprite/Items/bien/tomate.webp" id="10_1sypm"]
+[ext_resource type="PackedScene" uid="uid://cvh5pr35d4rvq" path="res://Scene/Interface/menu_pausa.tscn" id="12_2dof7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p6qlh"]
 atlas = ExtResource("2_58ae2")
@@ -160,6 +161,9 @@ scale = Vector2(3.72, 1)
 position = Vector2(0, 24)
 scale = Vector2(0.311831, 1.68266)
 shape = SubResource("CircleShape2D_ivevv")
+
+[node name="CanvasLayer2" parent="." instance=ExtResource("12_2dof7")]
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

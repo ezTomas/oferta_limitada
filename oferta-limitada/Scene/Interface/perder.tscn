@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dykyp6154hsuo"]
+[gd_scene load_steps=5 format=3 uid="uid://dykyp6154hsuo"]
 
 [ext_resource type="Script" uid="uid://bwb4l4wl2murc" path="res://Scene/Interface/perder.gd" id="1_e1nr8"]
 [ext_resource type="Texture2D" uid="uid://dojllr100payq" path="res://Sprite/Interface/FondoPerdiste.jpg" id="2_e1nr8"]
 [ext_resource type="Texture2D" uid="uid://ddl80f7fxd0fk" path="res://Sprite/Interface/Botones/volver.jpg" id="3_e1nr8"]
+[ext_resource type="AudioStream" uid="uid://bgu6xnv8jywho" path="res://Audio/Sonido PERDER_GANASTE.mp3" id="4_muu14"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -39,5 +40,9 @@ grow_vertical = 0
 [node name="Button" type="Button" parent="TextureRect/HBoxContainer"]
 layout_mode = 2
 icon = ExtResource("3_e1nr8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_muu14")
+volume_db = -31.857
 
 [connection signal="pressed" from="TextureRect/HBoxContainer/Button" to="." method="_on_button_pressed"]

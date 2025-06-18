@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkq3xn3sgepny"]
+
+[ext_resource type="Texture2D" uid="uid://doy2fp0hhapuh" path="res://Sprite/Items/Carne.png" id="1_exkbj"]
+[ext_resource type="Script" uid="uid://dsfr6d7agv88j" path="res://Scene/items/script/carne.gd" id="1_ucraw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ucraw"]
+radius = 35.0143
+
+[node name="Carne" type="Area2D" groups=["items"]]
+script = ExtResource("1_ucraw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0550098, 0.0550098)
+texture = ExtResource("1_exkbj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ucraw")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

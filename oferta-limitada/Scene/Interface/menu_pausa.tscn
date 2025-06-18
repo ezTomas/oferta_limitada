@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvh5pr35d4rvq"]
+
+[ext_resource type="Script" uid="uid://r65onrdg0r78" path="res://Scene/Interface/canvas_layer.gd" id="1_j8y8f"]
+[ext_resource type="Texture2D" uid="uid://dtw1dy35wmsyh" path="res://Sprite/Interface/FondoPausa.png" id="2_ay1kb"]
+[ext_resource type="Texture2D" uid="uid://dx4jsfbkvgaky" path="res://Sprite/Interface/Botones/Reanudar.png" id="3_a68dc"]
+[ext_resource type="Texture2D" uid="uid://ct2v2nw63yye4" path="res://Sprite/Interface/Botones/Controles.png" id="4_a4x72"]
+[ext_resource type="Texture2D" uid="uid://7tteiuavp08u" path="res://Sprite/Interface/Botones/Salir.png" id="5_mhnjm"]
+[ext_resource type="AudioStream" uid="uid://dew7n0j3vetbg" path="res://Audio/Sonido MENU_PAUSA.mp3" id="6_a68dc"]
+
+[node name="CanvasLayer" type="CanvasLayer" groups=["Menu"]]
+process_mode = 3
+script = ExtResource("1_j8y8f")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ay1kb")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -39.0
+offset_right = 38.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Volver" type="Button" parent="TextureRect/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("3_a68dc")
+
+[node name="Controles" type="Button" parent="TextureRect/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("4_a4x72")
+
+[node name="Salir" type="Button" parent="TextureRect/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("5_mhnjm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_a68dc")
+volume_db = -36.54
+
+[connection signal="pressed" from="TextureRect/VBoxContainer/Volver" to="." method="_on_volver_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/Controles" to="." method="_on_controles_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/Salir" to="." method="_on_salir_pressed"]

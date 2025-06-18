@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsd2q5q3ph2xr"]
+
+[ext_resource type="Script" uid="uid://dkbc77sccs5dy" path="res://Scene/items/script/tomate.gd" id="1_56tu2"]
+[ext_resource type="Texture2D" uid="uid://b3i7808rvnprt" path="res://Sprite/Items/Frutilla.png" id="2_11v2m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a7rhw"]
+radius = 59.0
+
+[node name="Frutilla" type="Area2D" groups=["items"]]
+script = ExtResource("1_56tu2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_a7rhw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.100961, 0.100962)
+texture = ExtResource("2_11v2m")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

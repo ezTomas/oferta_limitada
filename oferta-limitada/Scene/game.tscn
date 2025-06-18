@@ -1,6 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://y3wspxw8hkle"]
+[gd_scene load_steps=35 format=3 uid="uid://y3wspxw8hkle"]
 
 [ext_resource type="Texture2D" uid="uid://xokqw8eypdjg" path="res://Sprite/Escenario/Pared.png" id="1_lc2xo"]
+[ext_resource type="Script" uid="uid://dc7aucmo6q5l4" path="res://Scene/game.gd" id="1_x6l2d"]
 [ext_resource type="Texture2D" uid="uid://tq5o2n2rs8t6" path="res://Sprite/Escenario/Piso.jpg" id="2_215e1"]
 [ext_resource type="PackedScene" uid="uid://bfsyx07gb65mo" path="res://Scene/NPC/NPC bueno/npc_2.tscn" id="2_vyw1f"]
 [ext_resource type="PackedScene" uid="uid://brww7vky2ebqo" path="res://Scene/NPC/NPC bueno/npc.tscn" id="2_yjs1f"]
@@ -16,12 +17,19 @@
 [ext_resource type="PackedScene" uid="uid://b4qtf3kv5noyh" path="res://Scene/Escenario/gondola_laterar_der.tscn" id="12_f1jbl"]
 [ext_resource type="Texture2D" uid="uid://f68ug1x2hojn" path="res://Sprite/Escenario/EspacioLimite.png" id="13_vaj68"]
 [ext_resource type="PackedScene" uid="uid://j2lvf60hmnpe" path="res://Scene/NPC/NPC malo/npc_prinpipal.tscn" id="16_cvvdq"]
-[ext_resource type="PackedScene" uid="uid://ctpgt55tmlvym" path="res://Scene/items/naranje.tscn" id="17_gji41"]
-[ext_resource type="PackedScene" uid="uid://bkq3xn3sgepny" path="res://Scene/items/carne.tscn" id="18_5smqc"]
-[ext_resource type="PackedScene" uid="uid://5onm8gcyrwmf" path="res://Scene/items/tomate.tscn" id="19_mo8cs"]
-[ext_resource type="PackedScene" uid="uid://ljoqqca1vfui" path="res://Scene/items/aguaç.tscn" id="20_nnpbk"]
-[ext_resource type="PackedScene" uid="uid://cv20pjpvn43dh" path="res://Scene/items/enegy.tscn" id="21_5smqc"]
-[ext_resource type="PackedScene" uid="uid://dp8fjkuiit7ri" path="res://Scene/items/picante.tscn" id="22_mo8cs"]
+[ext_resource type="PackedScene" uid="uid://ctpgt55tmlvym" path="res://Scene/items/Scena/naranje.tscn" id="17_gji41"]
+[ext_resource type="PackedScene" uid="uid://bkq3xn3sgepny" path="res://Scene/items/Scena/carne.tscn" id="18_5smqc"]
+[ext_resource type="PackedScene" uid="uid://5onm8gcyrwmf" path="res://Scene/items/Scena/tomate.tscn" id="19_mo8cs"]
+[ext_resource type="PackedScene" uid="uid://ljoqqca1vfui" path="res://Scene/items/Scena/aguaç.tscn" id="20_nnpbk"]
+[ext_resource type="PackedScene" uid="uid://cv20pjpvn43dh" path="res://Scene/items/Scena/enegy.tscn" id="21_5smqc"]
+[ext_resource type="PackedScene" uid="uid://dp8fjkuiit7ri" path="res://Scene/items/Scena/picante.tscn" id="22_mo8cs"]
+[ext_resource type="PackedScene" uid="uid://c4fahhl75vrt2" path="res://Scene/items/Scena/banana.tscn" id="23_t4l4u"]
+[ext_resource type="PackedScene" uid="uid://c2kjm3bwtbek0" path="res://Scene/items/Scena/salame.tscn" id="24_kiq81"]
+[ext_resource type="PackedScene" uid="uid://blr7h4rc108w7" path="res://Scene/items/Scena/pan.tscn" id="25_x6l2d"]
+[ext_resource type="PackedScene" uid="uid://dy3ewhyy5c3vn" path="res://Scene/items/Scena/huevos.tscn" id="26_ckojl"]
+[ext_resource type="PackedScene" uid="uid://be58wxkggb7ut" path="res://Scene/items/Scena/chocolate.tscn" id="27_frawd"]
+[ext_resource type="PackedScene" uid="uid://bsd2q5q3ph2xr" path="res://Scene/items/Scena/frutilla.tscn" id="28_nbbww"]
+[ext_resource type="AudioStream" uid="uid://dnxgi0i15pic0" path="res://Audio/Sonido SUPERMERCADO.mp3" id="30_ckojl"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_sqb0o"]
 a = Vector2(885.032, 115.037)
@@ -36,7 +44,8 @@ size = Vector2(1677.54, 96.0679)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m52p7"]
 size = Vector2(85.676, 1065.93)
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" groups=["Game"]]
+script = ExtResource("1_x6l2d")
 
 [node name="Piso" type="StaticBody2D" parent="."]
 
@@ -58,17 +67,23 @@ position = Vector2(1048, -128)
 scale = Vector2(0.695494, 1.25753)
 texture = ExtResource("1_lc2xo")
 
-[node name="Gondola3" parent="." instance=ExtResource("6_rvswv")]
-position = Vector2(1281, -57)
-scale = Vector2(1.76, 1.24)
+[node name="Node2D" type="Node2D" parent="."]
 
-[node name="Gondola2" parent="." instance=ExtResource("5_e8heu")]
+[node name="Gondola1" parent="Node2D" instance=ExtResource("4_80cx4")]
+position = Vector2(795, -20)
+scale = Vector2(1.36, 1.72)
+
+[node name="Gondola2" parent="Node2D" instance=ExtResource("5_e8heu")]
 position = Vector2(1739, -65)
 scale = Vector2(1.2, 1.4)
 
-[node name="Gondola1" parent="." instance=ExtResource("4_80cx4")]
-position = Vector2(795, -20)
-scale = Vector2(1.36, 1.72)
+[node name="Gondola3" parent="Node2D" instance=ExtResource("6_rvswv")]
+position = Vector2(1281, -57)
+scale = Vector2(1.76, 1.24)
+
+[node name="Gondola3_1" parent="Node2D" instance=ExtResource("6_rvswv")]
+position = Vector2(208, -67)
+scale = Vector2(1.56, 1.32)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_7sc4i")]
 position = Vector2(351, 1231)
@@ -76,7 +91,7 @@ scale = Vector2(0.447188, 0.562705)
 motion_mode = 1
 
 [node name="NPC_Prinpipal" parent="." instance=ExtResource("16_cvvdq")]
-position = Vector2(1953, 1045)
+position = Vector2(1190, 392)
 
 [node name="Escenario" type="Node2D" parent="."]
 
@@ -139,10 +154,6 @@ position = Vector2(-238.11, 250.111)
 [node name="Gondolas" type="Node2D" parent="Escenario"]
 position = Vector2(57, 1089)
 
-[node name="Gondola3_1" parent="Escenario/Gondolas" instance=ExtResource("6_rvswv")]
-position = Vector2(151, -1156)
-scale = Vector2(1.56, 1.32)
-
 [node name="CajaRegistradora" parent="Escenario/Gondolas" instance=ExtResource("7_boyg6")]
 
 [node name="Bebidas" parent="Escenario/Gondolas" instance=ExtResource("9_ha7wd")]
@@ -199,3 +210,31 @@ position = Vector2(1799, 1192)
 
 [node name="Energy" parent="Items" instance=ExtResource("21_5smqc")]
 position = Vector2(312, 618)
+
+[node name="Banana" parent="Items" instance=ExtResource("23_t4l4u")]
+position = Vector2(1713, 708)
+rotation = -1.56013
+scale = Vector2(0.685263, 0.685263)
+
+[node name="Salame" parent="Items" instance=ExtResource("24_kiq81")]
+position = Vector2(102, 692)
+scale = Vector2(0.560001, 0.560001)
+
+[node name="Pan" parent="Items" instance=ExtResource("25_x6l2d")]
+position = Vector2(1203, -16)
+
+[node name="Huevos" parent="Items" instance=ExtResource("26_ckojl")]
+position = Vector2(1401, 335)
+scale = Vector2(0.48001, 0.545453)
+
+[node name="Chocolate" parent="Items" instance=ExtResource("27_frawd")]
+position = Vector2(1538, 11)
+
+[node name="Frutilla" parent="Items" instance=ExtResource("28_nbbww")]
+position = Vector2(1074, 820)
+rotation = -1.01782
+scale = Vector2(0.454754, 0.454754)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_ckojl")
+volume_db = -25.297

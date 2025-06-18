@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp8fjkuiit7ri"]
+
+[ext_resource type="Script" uid="uid://cirqdu5kawnx3" path="res://Scene/items/script/picante.gd" id="1_d5r1x"]
+[ext_resource type="Texture2D" uid="uid://cil64r1mam11b" path="res://Sprite/Items/bien/picante.png" id="2_d5r1x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d5r1x"]
+radius = 23.8619
+height = 47.7238
+
+[node name="Picante" type="Area2D" groups=["items"]]
+scale = Vector2(1.46677, 1.46677)
+script = ExtResource("1_d5r1x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.263722, 0.199789)
+texture = ExtResource("2_d5r1x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_d5r1x")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

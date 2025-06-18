@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ljoqqca1vfui"]
+
+[ext_resource type="Texture2D" uid="uid://dhys6evnryb44" path="res://Sprite/Items/Agua.png" id="1_bmlkv"]
+[ext_resource type="Script" uid="uid://d1hd3gtyxbip6" path="res://Scene/items/script/aguaç.gd" id="1_dippk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dippk"]
+radius = 24.0
+height = 86.0
+
+[node name="Aguaç" type="Area2D" groups=["items"]]
+script = ExtResource("1_dippk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0630631, 0.0630631)
+texture = ExtResource("1_bmlkv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_dippk")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

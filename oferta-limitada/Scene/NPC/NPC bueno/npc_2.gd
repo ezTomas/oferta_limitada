@@ -14,13 +14,12 @@ var moviendo_izquierda= true #Variable para saber si se mueve para la izquierda
 const NPC_BUENO_1 = preload("res://Dialogos/npc_bueno1.dialogue")
 var is_player_close = false
 var is_dialogue_active = false
+@onready var jugador = get_tree().get_nodes_in_group("player")
 
 func _process(delta: float) -> void:
 	flip_h() #Llamm a la funcion
 	animacion() #Llamm a la funcion
-	
-	if is_player_close and not is_dialogue_active:
-		DialogueManager.show_dialogue_balloon(NPC_BUENO_1, "start")
+
 
 func _ready() -> void:
 	DialogueManager.dialogue_started.connect(_on_dialogue_start)
@@ -51,18 +50,23 @@ func flip_h():
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	is_player_close = true
-
+	var jugador = get_tree().get_nodes_in_group("player")
+	if area.is_in_group("player"):
+		is_player_close = true
+	if is_player_close and not is_dialogue_active:
+		speed = 0
+		DialogueManager.show_dialogue_balloon(NPC_BUENO_1, "start")
+		jugador[0].speed = 0
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	is_player_close = false
-
+	if area.is_in_group("player"):
+		is_player_close = false
+		is_dialogue_active = true
 func _on_dialogue_start(dialogue):
-	is_dialogue_active = true
-	speed = 0
+	pass
 
 func _on_dialogue_ended(dialogue):
 	await get_tree().create_timer(1.5).timeout
 	is_dialogue_active = false
-	
 	speed = 70
+	jugador[0].speed = 300

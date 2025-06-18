@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name player
 
 var is_facing_right: bool = true
-var tomate: PackedScene =  preload("res://Scene/items/tomate.tscn")
+
 var lista_completa: bool = false
 
 @export var speed: float = 300

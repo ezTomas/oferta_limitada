@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dew7n0j3vetbg"
+path="res://.godot/imported/Sonido MENU_PAUSA.mp3-bd14fd4321d0f63d5fae7459b0ba6ba1.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sonido MENU_PAUSA.mp3"
+dest_files=["res://.godot/imported/Sonido MENU_PAUSA.mp3-bd14fd4321d0f63d5fae7459b0ba6ba1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctpgt55tmlvym"]
+
+[ext_resource type="Script" uid="uid://dfi3end2malbe" path="res://Scene/items/script/naranje.gd" id="1_byto5"]
+[ext_resource type="Texture2D" uid="uid://cvq52dum6dj3y" path="res://Sprite/Items/Naranja.png" id="1_uywk6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_byto5"]
+radius = 34.0147
+
+[sub_resource type="GDScript" id="GDScript_ogflj"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_tomate_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_tomate_area_exited(area: Area2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_naranje_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_naranje_area_exited(area: Area2D) -> void:
+	pass # Replace with function body.
+"
+
+[node name="Naranje" type="Area2D" groups=["items"]]
+script = ExtResource("1_byto5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_byto5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0629921, 0.0629921)
+texture = ExtResource("1_uywk6")
+script = SubResource("GDScript_ogflj")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
